@@ -1,11 +1,9 @@
 # include <stdio.h>
 
  /**
-  * main - this is a prinf function
-  *
-  * Return: 0
-  *
-  */
+ * main - this is a prinf function
+ * Return: 0
+ */
 
 int main(void)
 {
