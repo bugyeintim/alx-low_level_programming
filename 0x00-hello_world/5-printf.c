@@ -1,7 +1,7 @@
 # include <stdio.h>
 
  /**
-  * main - this is the printf function
+  * main - this is a prinf function
   *
   * Return: 0
   *
