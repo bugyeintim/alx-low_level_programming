@@ -1,8 +1,8 @@
-#include "mian.h"
+#include "main.h"
 /**
- *
  * rev_str - prints strings in reverse
  * @s: first parameter
+ *
  */
 
 void rev_str(char *s)
@@ -12,14 +12,15 @@ void rev_str(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		count ++;
+		count++;
 	}
 	for (i = 0; i < count / 2; i++)
 	{
 		char j;
+
 		j = s[i];
 
 		s[i] = s[count - 1 - i];
-		s[count -1 -i] = j;
+		s[count - 1 - i] = j;
 	}
 }
