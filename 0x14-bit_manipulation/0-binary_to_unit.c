@@ -1,49 +1,34 @@
 #include "main.h"
 
 /**
- * _pow - Calculates (base ^ power)
- * @base: Base of the exponent
- * @power: Power of the exponent
+ * binary_to_uint - Converts a binary number to an unsigned int.
+ * @b: Pointer to a string containing a binary number
  *
- * Return: Value of (base ^ power)
+ * Return: Unsigned int with the decimal value of binary number, or 0 if error
  */
-unsigned long int _pow(unsigned int base, unsigned int power)
+unsigned int binary_to_uint(const char *b)
 {
-	unsigned long int num;
-	unsigned int a;
+	int a;
+	unsigned int num;
 
-	num = 1;
-	for (a = 1; a <= power; a++)
-		num *= base;
-	return (num);
-}
+	num = 0;
 
-/**
- * print_binary - Prints a number in binary notation
- * @n: Number to print in binary
- *
- * Return: void
- */
+	if (!b)
+		return (0);
 
-void print_binary(unsigned long int n)
-{
-	unsigned long int divisor, check;
-	char flag;
-
-	flag = 0;
-	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (divisor != 0)
+	for (a = 0; b[a] != '\0'; a++)
 	{
-		check = n & divisor;
-		if (check == divisor)
-		{
-			flag = 1;
-			_putchar('1');
-		}
-		else if (flag == 1 || divisor == 1)
-		{
-			_putchar('0');
-		}
-		divisor >>= 1;
+		if (b[a] != '0' && b[a] != '1')
+			return (0);
 	}
+
+	for (a = 0; b[a] != '\0'; a++)
+	{
+		num <<= 1;
+
+		if (b[a] == '1')
+			num += 1;
+	}
+
+	return (num);
 }
