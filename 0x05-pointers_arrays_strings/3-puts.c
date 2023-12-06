@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _puts - puts string followed by a new number
  * @str: first parameter
